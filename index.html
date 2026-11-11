@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>Quản lý dự án hạ tầng · VTTD</title>
+<title>Quản lý dự án hạ tầng</title>
 <meta name="color-scheme" content="light dark">
 <link rel="icon" type="image/svg+xml" href="logo.svg">
 <meta name="theme-color" content="#eef2fb" media="(prefers-color-scheme: light)">
@@ -98,6 +98,8 @@ a.lnk{color:var(--blue);cursor:pointer;font-weight:600;text-decoration:none}
 @media(max-width:900px){.mark{width:48px;height:48px}}
 .mark.sm,.mark.sm:is(img){width:28px;height:28px;box-shadow:none}
 .brand-row{display:flex;align-items:center;gap:10px}
+.co{display:grid;gap:2px;min-width:0}
+.co b{font-size:.88rem;font-weight:700;line-height:1.3;color:var(--ink);max-width:24em}
 .auth-title{font-size:clamp(2rem,4.6vw,3.2rem);font-weight:800;letter-spacing:-.035em;line-height:1.08;margin:22px 0 10px;
   background:linear-gradient(90deg,var(--ink),var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent}
 .auth-lead{font-size:1.05rem;color:var(--mute);margin:0 0 28px;max-width:34em}
@@ -213,7 +215,7 @@ function khung(noiDung) {
     var p = x.split(':');
     return '<button class="chip" data-v="' + p[0] + '" aria-current="' + (S.view === p[0] || (S.view === 'ct' && p[0] === 'ds')) + '">' + p[1] + '</button>';
   }).join('');
-  return '<div class="top"><span class="brand-row"><img class="mark sm" src="logo.svg" width="26" height="26" alt="VTTD"><span class="brand">VTTD · Quản lý dự án hạ tầng</span></span><span><span class="badge" title="' + esc(S.user ? S.user.email : '') + '">' + esc(S.user ? S.user.hoTen + ' · ' + (VAI_TRO[S.user.vaiTro] || '') + (S.user.chiNhanh ? ' ' + S.user.chiNhanh : '') : '') + '</span> <button class="chip" id="out">Thoát</button></span></div>' +
+  return '<div class="top"><span class="brand-row"><img class="mark sm" src="logo.svg" width="28" height="28" alt="VTTD"><span class="brand">Quản lý dự án hạ tầng</span></span><span><span class="badge" title="' + esc(S.user ? S.user.email : '') + '">' + esc(S.user ? S.user.hoTen + ' · ' + (VAI_TRO[S.user.vaiTro] || '') + (S.user.chiNhanh ? ' ' + S.user.chiNhanh : '') : '') + '</span> <button class="chip" id="out">Thoát</button></span></div>' +
     '<div class="nav">' + nav + '</div>' + noiDung;
 }
 
@@ -224,7 +226,7 @@ var ICO = {
   quyen: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.2 7.8 8 9 4.8-1.2 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg>',
   dau: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>'
 };
-var MARK = '<img class="mark" src="logo.svg" width="44" height="44" alt="VTTD">';
+var MARK = '<img class="mark" src="logo.svg" width="56" height="56" alt="VTTD">';
 
 function cacBuoc(hienTai) {
   var ten = ['Đăng nhập Google', 'Gửi thông tin', 'Phòng Kỹ thuật duyệt'];
@@ -236,7 +238,7 @@ function cacBuoc(hienTai) {
 
 var aniDn = false;
 function khungDangNhap(noiDung, buoc) {
-  var gt = '<section class="auth-brand" aria-label="Giới thiệu hệ thống"><div class="mark-row">' + MARK + '<span class="brand">VTTD · Phòng Kỹ thuật</span></div>' +
+  var gt = '<section class="auth-brand" aria-label="Giới thiệu hệ thống"><div class="mark-row">' + MARK + '<span class="co"><b>Công ty Cổ phần Phát triển Viễn thông và Truyền hình Việt Nam</b><span class="brand">Phòng Kỹ thuật</span></span></div>' +
     '<p class="auth-title">Quản lý dự án hạ tầng</p>' +
     '<p class="auth-lead">Theo dõi tiến độ thi công và cảnh báo trễ của 34 chi nhánh trên một hệ thống.</p>' +
     '<ul class="feat">' +
